@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="loginApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="device.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="js/login.js"></script>
+</head>
+
+<body>
+<div class="login" ng-controller="loginController">
+    <h1>Delivery App</h1>
+    <input type="text" placeholder="Username" required="required" ng-model="model.loginId"/>
+    <input type="password" placeholder="Password" required="required" ng-model="model.password" />
+    <button type="butt" ng-click="login()" class="btn btn-primary btn-block btn-large">Login</button>
+    <div style="color: red;">{{model.message}}</div>
+</div>
+<script type="text/javascript">
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+        console.log(Device.cordova);
+    }
+</script>
+</body>
+</html>
